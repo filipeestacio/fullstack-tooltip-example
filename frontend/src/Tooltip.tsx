@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
-import styles from './Tooltip.module.css';
+import styles from './styles/Tooltip.module.css';
 
-interface TooltipProps {
+export type TooltipProps = {
     isVisible: boolean
     content: string
     x: number
