@@ -54,3 +54,16 @@ The frontend will run at [http://localhost:5173](http://localhost:5173)
 - The frontend fetches and displays products from the backend.
 - The Tooltip component shows the product description on hover or focus.
 - You must create products (using Swagger or the API) before they will appear in the frontend.
+
+---
+
+## Why soft-deleting?
+- It would be perhaps slightly easier to implement a hard delete using the appropriate api on Mongoose. However, this is an opportunity to note that in a real environment there should always be made an effort to preserve history. This can be achieved via a soft delete as implemented here or by any other appropriate means, such as on delete triggering a process that would save some sort of log of the record for audit purposes.
+
+---
+
+## What else could I have done?
+In the interest of brevity and to keep within the scope of the assignment, some features that would otherwise be expected have been left out, such as:
+- Auth, even if just a username and password saved in the in-memory database for the purpose of demonstrating a signup and signin process.
+- A form to add products to the database. It is assumed that the lack of this is compensated by testing the backend via the Swagger documentation provided.
+- Starting by designing the OpenAPI spec, so that a shared types library could be generated from it, and used by both the backend and the frontend to establish the contract between both. I didn't want to overcomplicate the implementation, but in the past I have done this using Zod in a monorepo.
